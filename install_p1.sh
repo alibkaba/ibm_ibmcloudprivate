@@ -1,11 +1,13 @@
 #!/bin/bash
 ###############################################################################################################
-## [Author]: Ali Kaba (https://github.ibm.com/akaba/icp) (https://github.com/AKx2f/icp)
+## [Author]: Ali Kaba (https://github.com/AKx2f/icp) (https://github.ibm.com/akaba/icp)
 ##-------------------------------------------------------------------------------------------------------------
 ## [Details]: ALL NODES INSTALL
 ## ICP CE/EE
+## You want to run this script on all nodes.
 ##-------------------------------------------------------------------------------------------------------------
 ## [Warning]:
+## IBM does not endorse this script in any shape or form.
 ## This script comes as-is with no promise of functionality or accuracy.  Feel free to change or improve it
 ## any way you see fit.
 ## Debian distribution / AMD64 only / Ubuntu 16.04 LTS
@@ -31,7 +33,7 @@ fi
 install(){
   # uninstall old versions of docker
 	echo -e "${LGREEN}[+] Uninstalling old Docker versions${ORANGE}";
-  apt-get -y remove docker docker-engine docker-ce docker.io
+  apt-get -y remove docker docker-engine docker.io
 
   sleep 2;
 
@@ -128,17 +130,17 @@ install(){
   sleep 2;
 
   # add a parameter (vm.max_map_count=262144) in /etc/sysctl.conf
-  if ! cat /etc/sysctl.conf | grep -q vm.max_map_count; then
+  if ! cat /etc/sysctl.conf | grep "^[^#;]" | grep -q vm.max_map_count; then
     echo -e "${LGREEN}[+] Adding a vm.max_map_count=262144 in /etc/sysctl.conf.${ORANGE}";
     sysctl -w vm.max_map_count=262144;
     echo -e "vm.max_map_count=262144" >> /etc/sysctl.conf;
   else
-    if grep vm.max_map_count /etc/sysctl.conf | awk -F "=" '{ print $2 }' | egrep -q '^[0-9]+$'; then
-      if (($(grep vm.max_map_count /etc/sysctl.conf | awk -F "=" '{ print $2 }') >= 262144)); then
+    if grep "^[^#;]" /etc/sysctl.conf | grep vm.max_map_count | awk -F "=" '{ print $2 }' | egrep -q '^[0-9]+$'; then
+      if (($(grep "^[^#;]" /etc/sysctl.conf | grep vm.max_map_count | awk -F "=" '{ print $2 }') >= 262144)); then
         echo -e "${LGREEN}[+] /etc/sysctl.conf's vm.max_map_count has the minumum required value of 262144.${ORANGE}";
       else
         echo -e "${LGREEN}[+] /etc/sysctl.conf's vm.max_map_count value was updated to 262144.${ORANGE}";
-        sed -i -e 's/'$(grep vm.max_map_count sysctl.conf | awk -F "=" '{ print $2 }')'/262144/g' /etc/sysctl.conf;
+        sed -i -e 's/'$(grep vm.max_map_count /etc/sysctl.conf | awk -F "=" '{ print $2 }')'/262144/g' /etc/sysctl.conf;
       fi
     else
       echo -e "${RED}[!] /etc/sysctl.conf's vm.max_map_count value contains non-integer.  Please remove vm.max_map_count and re-run the script.${RESET}";
@@ -162,9 +164,8 @@ envCHECK(){
 start(){
 	clear;
 	echo -e "${RESET}########################################################################################";
-	echo -e "This bash script is hardcoded to install ${LCYAN}$icpCE${RESET}.";
-	echo -e "Run this on ${RED}ALL${RESET} nodes.";
-	echo -e "This was only tested on Ubuntu 16.04 LTS...so use it at your own ${RED}risk${RESET}.";
+  echo -e "Please read this script's description before running it.";
+  echo -e "${RED}NOT${RESET} endorsed by IBM and so use it at your own ${RED}risk${RESET}.";
 	echo -e "########################################################################################\n\n";
 
 	echo -e "${RED}DO YOU WANT TO CONTINUE?${RESET} (type the number next to your option)";

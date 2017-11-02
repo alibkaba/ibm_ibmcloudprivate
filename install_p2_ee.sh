@@ -1,14 +1,16 @@
 #!/bin/bash
 ###############################################################################################################
-## [Author]: Ali Kaba (https://github.ibm.com/akaba/icp) (https://github.com/AKx2f/icp)
+## [Author]:
+## Ali Kaba (https://github.com/AKx2f/icp) (https://github.ibm.com/akaba/icp)
 ##-------------------------------------------------------------------------------------------------------------
-## [Details]: MASTER NODE INSTALL ONLY (if you have multiple MASTERS, run this on a SINGLE MASTER)
-## ICP EE
+## [Details]:
+## Run this ICP EE script on the master/boot node.
 ##-------------------------------------------------------------------------------------------------------------
 ## [Required]:
 ## install.conf
 ##-------------------------------------------------------------------------------------------------------------
 ## [Warning]:
+## IBM does not endorse this script in any shape or form.
 ## This script comes as-is with no promise of functionality or accuracy.  Feel free to change or improve it
 ## any way you see fit.
 ## Debian distribution / AMD64 only / Ubuntu 16.04 LTS
@@ -252,10 +254,9 @@ managementARRAY=($(grep "^[^#;]" install.conf | sed -n '/management]/,/end/{/man
 
 start(){
 	clear;
-	echo -e "${RESET}########################################################################################";
-	echo -e "This bash script is hardcoded to install${LCYAN}$icpEE${RESET}.";
-	echo -e "Run this on a ${RED}single${RESET} master/boot node.";
-	echo -e "This was only tested on Ubuntu 16.04 LTS...so use it at your own ${RED}risk${RESET}.";
+  echo -e "${RESET}########################################################################################";
+  echo -e "Please read this script's description before running it.";
+  echo -e "${RED}NOT${RESET} endorsed by IBM and so use it at your own ${RED}risk${RESET}.";
 	echo -e "########################################################################################\n\n";
 
   echo -e "${RED}DO YOU WANT TO CONTINUE?${RESET} (type 1 or 2)";
