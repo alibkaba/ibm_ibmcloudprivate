@@ -123,9 +123,9 @@ install(){
 
   sleep 2;
 
-  # create an icp directory
+  # create the installation directory
   if [[ ! -d /opt/icp ]]; then
-    echo -e "${LGREEN}[+] Creating installation Directory in /opt/icp/.${ORANGE}";
+    echo -e "${LGREEN}[+] Creating the installation directory in /opt/icp/.${ORANGE}";
     mkdir /opt/icp;
   else
     echo -e "${LGREEN}[+] Directory /opt/icp/ already exists!";

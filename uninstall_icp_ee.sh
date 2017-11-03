@@ -1,14 +1,19 @@
 #!/bin/bash
 ###############################################################################################################
-## [Author]: Ali Kaba (https://github.ibm.com/akaba/icp) (https://github.com/AKx2f/icp)
+## [Author]:
+## Ali Kaba (https://github.com/AKx2f/icp) (https://github.ibm.com/akaba/icp)
 ##-------------------------------------------------------------------------------------------------------------
-## [Details]: MASTER NODE INSTALL ONLY
-## ICP CE
+## [Details]:
+## Run this ICP CE uninstall script on the master/boot node.
+##-------------------------------------------------------------------------------------------------------------
+## [Required]:
+## install.conf
 ##-------------------------------------------------------------------------------------------------------------
 ## [Warning]:
+## IBM does not endorse this script in any shape or form.
 ## This script comes as-is with no promise of functionality or accuracy.  Feel free to change or improve it
 ## any way you see fit.
-## Debian distribution / AMD64 only
+## Debian distribution / AMD64 only / Ubuntu 16.04 LTS
 ##-------------------------------------------------------------------------------------------------------------
 ## [Modification, Distribution, and Attribution]:
 ## You are free to modify and/or distribute this script as you wish.  I only ask that you maintain original
@@ -38,6 +43,11 @@ uninstall(){
   echo -e "${LGREEN}[+] Restarting Docker.${RESET}";
   service docker restart;
   echo -e "${LGREEN}[+] If you have other nodes, restart their Docker using this command: service docker restart.${RESET}";
+
+  # delete the /opt/ibm and /opt/kubernetes directories
+  echo -e "${LGREEN}[+] Deleting the /opt/ibm and /opt/kubernetes directories.${RESET}";
+  rm -r /opt/ibm;
+  rm -r /opt/kubernetes;
 }
 
 envCHECK(){

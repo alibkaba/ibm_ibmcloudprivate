@@ -1,8 +1,9 @@
 #!/bin/bash
 ###############################################################################################################
-## [Author]: Ali Kaba (https://github.com/AKx2f/icp) (https://github.ibm.com/akaba/icp)
+## [Author]:
+## Ali Kaba (https://github.ibm.com/akaba/icp) (https://github.com/AKx2f/icp)
 ##-------------------------------------------------------------------------------------------------------------
-## [Details]: ALL NODES INSTALL
+## [Details]:
 ## ICP CE/EE
 ## You want to run this script on all nodes.
 ##-------------------------------------------------------------------------------------------------------------

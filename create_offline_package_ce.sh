@@ -1,8 +1,7 @@
 #!/bin/bash
 ###############################################################################################################
 ## [Author]:
-## Rebecca Guo
-## modified by Ali Kaba (https://github.ibm.com/akaba/icp) (https://github.com/AKx2f/icp)
+## modified by Ali Kaba (https://github.com/AKx2f/icp) (https://github.ibm.com/akaba/icp)
 ##-------------------------------------------------------------------------------------------------------------
 ## [Details]:
 ## This will bundle all ICP CE images into a .tar.gz file to do an offline installation elsewhere.
@@ -11,16 +10,18 @@
 ## This script comes as-is with no promise of functionality or accuracy.  Feel free to change or improve it
 ## any way you see fit.
 ## Debian distribution / AMD64 only / Ubuntu 16.04 LTS
+## This script will only work for x86_64.
 ##-------------------------------------------------------------------------------------------------------------
 ## [Modification, Distribution, and Attribution]:
 ## You are free to modify and/or distribute this script as you wish.  I only ask that you maintain original
 ## author attribution and not attempt to sell it or incorporate it into any commercial offering (as if it's
 ## worth anything anyway :)
 ###############################################################################################################
-# This script will only work for x86_64.
 
 # list of all containers:version believed to be needed to get icp ce 2.1.0 up and running
 IMAGES=(
+ibmcom/indices-cleaner:0.2
+ibmcom/icp-platform-auth:2.1.0
 ibmcom/alertmanager:v0.8.0
 ibmcom/calico-cni:v1.10.0
 ibmcom/calico-ctl:v1.4.0
