@@ -7,6 +7,7 @@
 ## This will bundle all ICP CE images into a .tar.gz file to do an offline installation elsewhere.
 ##-------------------------------------------------------------------------------------------------------------
 ## [Warning]:
+## IBM does not endorse this script in any shape or form.
 ## This script comes as-is with no promise of functionality or accuracy.  Feel free to change or improve it
 ## any way you see fit.
 ## Debian distribution / AMD64 only / Ubuntu 16.04 LTS
