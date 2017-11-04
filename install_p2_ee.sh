@@ -202,16 +202,16 @@ install(){
   grep "^[^#;]" install.conf | awk '/master/{flag=1} /end/{flag=0} flag' | awk '{ print $1 }' > /opt/icp/cluster/hosts;
 
   # create the installation directory
-  if [[ ! -d /opt/icp/images/ ]]; then
-    echo -e "${LGREEN}[+] Creating the installation directory in /opt/icp/.${ORANGE}";
-    mkdir /opt/icp/images;
+  if [[ ! -d /opt/icp/cluster/images ]]; then
+    echo -e "${LGREEN}[+] Creating the installation directory in /opt/icp/cluster/images.${ORANGE}";
+    mkdir /opt/icp/cluster/images;
   else
-    echo -e "${LGREEN}[+] Directory /opt/icp/images already exists!";
+    echo -e "${LGREEN}[+] Directory /opt/icp/cluster/images already exists!";
   fi
 
   # Copy $icpEEtar to /opt/icp/cluster/images
   echo -e "${LGREEN}[+] Copying "$icpEEtar" to /opt/icp/cluster/images.${ORANGE}";
-  mv $icpEEtar /opt/icp/cluster/images/$icpEEtar;
+  cp $icpEEtar /opt/icp/cluster/images/$icpEEtar;
 
   finalCHECK;
 }
