@@ -1,23 +1,43 @@
 #!/bin/bash
-###############################################################################################################
+################################################################################
 ## [Author]:
-## Ali Kaba (https://github.ibm.com/akaba/icp) (https://github.com/alibkaba/icp) @alibkaba
-##-------------------------------------------------------------------------------------------------------------
+## Ali Kaba https://twitter.com/alibkaba
+## https://github.ibm.com/akaba/icp
+## https://github.com/alibkaba/ibm_ibmcloudprivate
+##------------------------------------------------------------------------------
 ## [Details]:
 ## ICP CE/EE
 ##
 ## Tested on:
 ## Linux™ 64-bit Ubuntu 16.04 LTS
 ## Linux on POWER 64-bit Little Endian (LE) Ubuntu 16.04 LTS
-##-------------------------------------------------------------------------------------------------------------
+##------------------------------------------------------------------------------
 ## [Warning]:
-## IBM does not endorse this script in any shape or form.
+## IBM does not endorse this script in any way shape or form.
 ## This script comes as-is with no promise of functionality or accuracy.
-##-------------------------------------------------------------------------------------------------------------
-## [Modification, Distribution, and Attribution]:
-## You are free to modify and/or distribute this script as you wish.  I only ask that you maintain original
-## author attribution and not attempt to sell it or incorporate it into any commercial offering (as if it's
-###############################################################################################################
+##------------------------------------------------------------------------------
+## [MIT License]:
+##
+## Copyright (c) [2018] [Ali Kaba]
+##
+## Permission is hereby granted, free of charge, to any person obtaining a copy
+## of this software and associated documentation files (the "Software"), to deal
+## in the Software without restriction, including without limitation the rights
+## to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+## copies of the Software, and to permit persons to whom the Software is
+## furnished to do so, subject to the following conditions:
+##
+## The above copyright notice and this permission notice shall be included in
+## all copies or substantial portions of the Software.
+##
+## THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+## IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+## FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+## AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+## LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+## OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+## SOFTWARE.
+################################################################################
 # To do list
 ## dependenciesINSTALL
 ### check if ssh allows remote login (and as root)
