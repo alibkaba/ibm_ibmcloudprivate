@@ -1,9 +1,7 @@
 #!/bin/bash
 ################################################################################
 ## [Author]:
-## Ali Kaba https://twitter.com/alibkaba
-## https://github.ibm.com/akaba/icp
-## https://github.com/alibkaba/ibm_ibmcloudprivate
+## Ali Kaba www.alibkaba.com
 ##------------------------------------------------------------------------------
 ## [Details]:
 ## ICP CE/EE
