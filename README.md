@@ -6,3 +6,5 @@
 1. [install.conf](install.conf) is required for the boot-master node.  Carefully read and edit it.
 2. Run [installicp.sh](installicp.sh) on all your nodes and install the dependencies.
 3. Run [installicp.sh](installicp.sh) on all your boot-master node to install CE or EE.
+## Contributions and Maintenance
+This project is no longer being maintained.
